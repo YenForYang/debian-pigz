@@ -1,0 +1,155 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck
+dpkg-buildpackage: info: source package pigz
+dpkg-buildpackage: info: source version 2.4-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Eduard Bloch <blade@debian.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+dpkg-source: info: using options from pigz-2.4/debian/source/options: --compression=xz
+ fakeroot debian/rules clean
+dh clean --parallel --with quilt
+   dh_auto_clean -O--parallel
+	make -j8 clean
+make[1]: Entering directory '/home/richard/debs/pigz/pigz-2.4'
+make[1]: Leaving directory '/home/richard/debs/pigz/pigz-2.4'
+   dh_quilt_unpatch -O--parallel
+No patch removed
+   dh_clean -O--parallel
+FAKEROOTKEY=19906658 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules clean
+ debian/rules build
+dh build --parallel --with quilt
+   dh_quilt_patch -O--parallel
+No patches in series
+   dh_update_autotools_config -O--parallel
+   dh_auto_configure -O--parallel
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/home/richard/debs/pigz/pigz-2.4'
+dh_auto_build -- LDFLAGS="-lz -Wl,-z,relro -Wl,-z,now -Wl,--as-needed,--gc-sections,--relax" CFLAGS="-g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe" CPPFLAGS="-Wdate-time -D_FORTIFY_SOURCE=2"
+	make -j8 "LDFLAGS=-lz -Wl,-z,relro -Wl,-z,now -Wl,--as-needed,--gc-sections,--relax" "CFLAGS=-g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe" "CPPFLAGS=-Wdate-time -D_FORTIFY_SOURCE=2"
+make[2]: Entering directory '/home/richard/debs/pigz/pigz-2.4'
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2  -c -o pigz.o pigz.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2  -c -o yarn.o yarn.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2  -c -o try.o try.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c zopfli/src/zopfli/deflate.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c zopfli/src/zopfli/blocksplitter.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c zopfli/src/zopfli/tree.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c zopfli/src/zopfli/lz77.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c zopfli/src/zopfli/cache.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c zopfli/src/zopfli/hash.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c zopfli/src/zopfli/util.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c zopfli/src/zopfli/squeeze.c
+/opt/intel/bin/icc -g -O2 -fdebug-prefix-map=/home/richard/debs/pigz/pigz-2.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c zopfli/src/zopfli/katajainen.c
+pigz.c(2950): warning #181: argument of type "intmax_t={__intmax_t={long}}" is incompatible with format "%10jd", expecting argument of type "long long"
+                     (intmax_t)g.in_tot, (intmax_t)len, tag);
+                     ^
+
+pigz.c(2950): warning #181: argument of type "intmax_t={__intmax_t={long}}" is incompatible with format "%10jd", expecting argument of type "long long"
+                     (intmax_t)g.in_tot, (intmax_t)len, tag);
+                                         ^
+
+pigz.c(2953): warning #181: argument of type "intmax_t={__intmax_t={long}}" is incompatible with format "%10jd", expecting argument of type "long long"
+                     (intmax_t)g.in_tot, (intmax_t)len, red, tag);
+                     ^
+
+pigz.c(2953): warning #181: argument of type "intmax_t={__intmax_t={long}}" is incompatible with format "%10jd", expecting argument of type "long long"
+                     (intmax_t)g.in_tot, (intmax_t)len, red, tag);
+                                         ^
+
+pigz.c(3606): warning #2218: result of call is not used
+      (void)chown(to, st.st_uid, st.st_gid);
+            ^
+
+pigz.c(3606): warning #2218: result of call is not used
+      (void)chown(to, st.st_uid, st.st_gid);
+      ^
+
+/opt/intel/bin/icc -lz -Wl,-z,relro -Wl,-z,now -Wl,--as-needed,--gc-sections,--relax -o pigz pigz.o yarn.o try.o deflate.o blocksplitter.o tree.o lz77.o cache.o hash.o util.o squeeze.o katajainen.o -lm -lpthread -lz
+icc: warning #10237: -lcilkrts linked in dynamically, static library not available
+ln -f pigz unpigz
+make[2]: Leaving directory '/home/richard/debs/pigz/pigz-2.4'
+make[1]: Leaving directory '/home/richard/debs/pigz/pigz-2.4'
+   dh_auto_test -O--parallel
+ fakeroot debian/rules binary
+dh binary --parallel --with quilt
+   dh_auto_test -O--parallel
+   dh_testroot -O--parallel
+   dh_prep -O--parallel
+   dh_installdirs -O--parallel
+   dh_auto_install -O--parallel
+   debian/rules override_dh_install
+make[1]: Entering directory '/home/richard/debs/pigz/pigz-2.4'
+dh_testdir
+dh_testroot
+dh_prep  
+dh_installdirs
+cp -l pigz /home/richard/debs/pigz/pigz-2.4/debian/pigz/usr/bin
+cp -l pigz /home/richard/debs/pigz/pigz-2.4/debian/pigz/usr/bin/unpigz
+dh_installman pigz.1
+ln -sf pigz.1.gz debian/pigz/usr/share/man/man1/unpigz.1.gz
+make[1]: Leaving directory '/home/richard/debs/pigz/pigz-2.4'
+   dh_installdocs -O--parallel
+   dh_installchangelogs -O--parallel
+   dh_installexamples -O--parallel
+   dh_installman -O--parallel
+   dh_installcatalogs -O--parallel
+   dh_installcron -O--parallel
+   dh_installdebconf -O--parallel
+   dh_installemacsen -O--parallel
+   dh_installifupdown -O--parallel
+   dh_installinfo -O--parallel
+   dh_installinit -O--parallel
+   dh_installmenu -O--parallel
+   dh_installmime -O--parallel
+   dh_installmodules -O--parallel
+   dh_installlogcheck -O--parallel
+   dh_installlogrotate -O--parallel
+   dh_installpam -O--parallel
+   dh_installppp -O--parallel
+   dh_installudev -O--parallel
+   dh_installgsettings -O--parallel
+   dh_bugfiles -O--parallel
+   dh_ucf -O--parallel
+   dh_lintian -O--parallel
+   dh_gconf -O--parallel
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O--parallel
+   dh_perl -O--parallel
+   dh_usrlocal -O--parallel
+   dh_link -O--parallel
+   dh_installwm -O--parallel
+   dh_installxfonts -O--parallel
+   dh_strip_nondeterminism -O--parallel
+   dh_compress -O--parallel
+   dh_fixperms -O--parallel
+   dh_missing -O--parallel
+   dh_strip -O--parallel
+objcopy: debian/pigz/usr/bin/stFruCOl: debuglink section already exists
+   dh_makeshlibs -O--parallel
+   dh_shlibdeps -O--parallel
+dpkg-shlibdeps: warning: deprecated use of LD_LIBRARY_PATH with private library directory which interferes with cross-building, please use -l option instead
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/pigz/usr/bin/pigz debian/pigz/usr/bin/unpigz were not linked against libdl.so.2 (they use none of the library's symbols)
+   dh_installdeb -O--parallel
+   dh_gencontrol -O--parallel
+   dh_md5sums -O--parallel
+   dh_builddeb -O--parallel
+dpkg-deb: building package 'pigz' in '../pigz_2.4-1_amd64.deb'.
+dpkg-deb: building package 'pigz-dbgsym' in '../pigz-dbgsym_2.4-1_amd64.deb'.
+FAKEROOTKEY=1055022303 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules binary
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../pigz_2.4-1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-source: info: using options from pigz-2.4/debian/source/options: --compression=xz
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian pigz_2.4-1_amd64.changes ...
+W: pigz: hardening-no-pie usr/bin/pigz
+W: pigz: hardening-no-pie usr/bin/unpigz
+Finished running lintian.

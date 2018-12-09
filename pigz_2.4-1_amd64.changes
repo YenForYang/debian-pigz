@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Wed, 27 Dec 2017 20:41:06 +0100
+Source: pigz
+Binary: pigz
+Built-For-Profiles: nobiarch nocheck
+Architecture: amd64
+Version: 2.4-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Eduard Bloch <blade@debian.org>
+Changed-By: Eduard Bloch <blade@debian.org>
+Description:
+ pigz       - Parallel Implementation of GZip
+Closes: 518583
+Changes:
+ pigz (2.4-1) unstable; urgency=medium
+ .
+   * New upstream release
+   * Added instructions for setting pigz as gzip replacement (closes: #518583)
+   * Policy update (changing Priority to optional)
+Checksums-Sha1:
+ 65388500e403e688aa9f3e2f8cc168fb0598e7f9 70944 pigz-dbgsym_2.4-1_amd64.deb
+ 91cb201258ec11c1bc56f058bcf60ef9b1c290a9 5234 pigz_2.4-1_amd64.buildinfo
+ a399d34583d865024b5f41943ca611ec031739b6 98736 pigz_2.4-1_amd64.deb
+Checksums-Sha256:
+ 5ec259ad776db2ca1d87a310cef2a87dee863870755253224e26df2d3cbe80fa 70944 pigz-dbgsym_2.4-1_amd64.deb
+ bee05b4f1d63fca7363409f723bc2fdf9b7150563973f17199ee6ee549f6492e 5234 pigz_2.4-1_amd64.buildinfo
+ b5f7909fd4531cd28b00b67f0a8afc9b5cbae957c075777ea531c833144c1542 98736 pigz_2.4-1_amd64.deb
+Files:
+ fc2acf19203ca5e5d056e7679afb372d 70944 debug optional pigz-dbgsym_2.4-1_amd64.deb
+ 66e449370eee87cb6a94978b5b6fc1d0 5234 utils optional pigz_2.4-1_amd64.buildinfo
+ d59dce79f76f4e2738d1f132a9f4675d 98736 utils optional pigz_2.4-1_amd64.deb

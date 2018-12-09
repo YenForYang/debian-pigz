@@ -1,0 +1,12 @@
+Package: pigz-dbgsym
+Source: pigz
+Version: 2.4-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Eduard Bloch <blade@debian.org>
+Installed-Size: 96
+Depends: pigz (= 2.4-1)
+Section: debug
+Priority: optional
+Description: debug symbols for pigz
+Build-Ids: 2cb1d64a352a5d21f784425d796b226c957958bb
